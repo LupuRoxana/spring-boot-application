@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS USERS;
+DROP TABLE IF EXISTS ROLES;
+
+CREATE SEQUENCE sequence_id
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1;
+CREATE TABLE USERS (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(250) NOT NULL,
+  last_name VARCHAR(250) NOT NULL,
+  username VARCHAR(250) DEFAULT NULL,
+  password VARCHAR(250) DEFAULT NULL
+);
+
+--CREATE TABLE ROLES (
+--  id INT AUTO_INCREMENT FOREIGN KEY,
+--  rol_name VARCHAR(250) NOT NULL,
+--  rol_description VARCHAR(250) NOT NULL
+--);
+
+INSERT INTO USERS (id, first_name, last_name, username, password) VALUES (sequence_id.nextval,'Roxana', 'LUPU', 'roxanaLupu', 'password');
